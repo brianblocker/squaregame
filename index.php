@@ -40,14 +40,16 @@
 	</div>
 
 	<div id="buttons"></div>
-
-	<script src="_js/riff.js"></script>
-	<script src="_js/audio.js"></script>
 	
 	<!-- could pull from a CDN like google's to make it load faster -->
 	<script src="_js/jquery.js"></script>
 
 	<script src="_js/modernizr.min"></script>
+	<script src="_js/underscore.min.js"></script>
+	<script src="_js/backbone.min.js"></script>
+	<script src="_js/core.js"></script>
+	<script src="_js/square-model.js"></script>
+	<script src="_js/square-view.js"></script>
 	<script src="_js/script.js"></script>
 
 </body>
