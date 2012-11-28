@@ -6,7 +6,7 @@
 			target : false
 		},
 		select : function() {
-			return ! this.get( 'target' )
+			return this.get( 'target' )
 		}
 	})
 

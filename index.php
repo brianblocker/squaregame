@@ -21,20 +21,7 @@
 
 	<div class="container">
 		<div class="row-fluid">
-			<h3>instructions</h3>
-		</div>
-		
-		<div class="row-fluid">
 			<div id="game"></div>
-		</div>
-
-		<div class="row-fluid">
-			<h5>Play Log</h5>
-			<div id="log"><pre>[ Click the keys above ]</pre></div>
-			<div class="controls">
-				<a class="btn btn-success replay" data-fn="play">Play</a>
-				<a class="btn btn-warning reset" data-fn="reset">Reset</a>
-			</div>
 		</div>
 
 	</div>
@@ -49,7 +36,10 @@
 	<script src="_js/backbone.min.js"></script>
 	<script src="_js/core.js"></script>
 	<script src="_js/square-model.js"></script>
+	<script src="_js/square-collection.js"></script>
+	<script src="_js/banner-view.js"></script>
 	<script src="_js/square-view.js"></script>
+	<script src="_js/square-list-view.js"></script>
 	<script src="_js/script.js"></script>
 
 </body>

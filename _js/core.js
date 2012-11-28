@@ -1,7 +1,7 @@
 ( function() {
 	"use_strict";
 
-	var App = { Models : {}, Views : {}, Routers : {}, router : false }
+	var App = { Collections : {}, Models : {}, Views : {}, Routers : {}, router : false, data : {}, view : false }
 
 	window.App = App;
 })();
