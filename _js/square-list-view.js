@@ -1,5 +1,5 @@
-( function( $ ) {
-	"use_strict";
+(function ($) {
+	"use strict";
 
 	var SquareList = Backbone.View.extend( {
 		squares : [],
@@ -8,65 +8,64 @@
 			'failure' : 'failure',
 			'success' : 'success'
 		},
-		initialize : function() {
+		initialize : function () {
 			var that = this;
 
-			this.collection.on( 'win', function() {
-				that.collection.shuffle()
-				that.banner.call( that, 'win' )
-			})
+			this.collection.on('win', function () {
+				that.collection.shuffle();
+				that.banner.call(that, 'win');
+			});
 
 			this.render();
 		},
-		render : function() {
+		render : function () {
 			var that = this;
 
-			this.collection.each( function( square_model ) {
-				var square = new App.Views.Square( { model : square_model, parent : that } );
+			this.collection.each(function (square_model) {
+				var square = new App.Views.Square({model : square_model, parent : that});
 
-				that.$el.append( square.$el )
+				that.$el.append(square.$el);
 				square.render();
-				that.squares.push( square )
+				that.squares.push(square);
 			});
 		},
-		banner : function( type ) {
+		banner : function (type) {
+			var banner_view = new App.Views.BannerView({type : type, parent : this});
+
 			this.pause();
-
-			var banner_view = new App.Views.BannerView( { type : type, parent : this } );
-
-			banner_view.$el.appendTo( 'BODY' ).addClass( 'show' )
+			banner_view.$el.appendTo('BODY').addClass('show');
 		},
-		reset : function() {
+		reset : function () {
 			var square;
 
-			while ( square = this.squares.pop() ) {
-				square.undelegateEvents()
-				square.remove()
+			while (square = this.squares.pop()) {
+				square.undelegateEvents();
+				square.remove();
 			}
-			
+
 			this.collection.shuffle();
 			this.render()
 		},
-		start : function() {
+		start : function () {
 			this.collection.showThem();
 		},
-		pause : function() {
-			_.each( this.squares, function( square ) {
-				square.undelegateEvents()
+		pause : function () {
+			_.each( this.squares, function (square) {
+				square.undelegateEvents();
 			})
 		},
-		play : function() {
-			_.each( this.squares, function( square ) {
-				square.delegateEvents()
-			})
+		play : function () {
+			_.each( this.squares, function (square) {
+				square.delegateEvents();
+			});
 		},
-		failure : function() {
-			this.banner( 'lose' )
+		failure : function () {
+			this.banner('lose');
 		},
-		success : function() {
-			this.collection.foundOne()
+		success : function () {
+			this.collection.foundOne();
 		}
 	});
 
 	window.App.Views.SquareList = SquareList;
-})( window.jQuery || window.Zepto );
+}(window.jQuery || window.Zepto));

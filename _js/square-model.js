@@ -1,14 +1,14 @@
-( function() {
-	"use_strict";
+(function () {
+	"use strict";
 
-	var Square = Backbone.Model.extend( {
+	var Square = Backbone.Model.extend({
 		defaults : {
 			target : false
 		},
-		select : function() {
-			return this.get( 'target' )
+		select : function () {
+			return this.get('target');
 		}
-	})
+	});
 
 	window.App.Models.Square = Square;
-})();
+}());
