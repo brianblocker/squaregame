@@ -28,7 +28,7 @@
 
 		size = game_width <= window_height ? game_width + 'px' : window_height + 'px';
 
-		$('.square-list').css({'font-size' : size, 'width' : width});
+		$('.square-list').css({'font-size' : size, 'width' : size});
 		game_view.banner( 'start' );
 
 		window.App.game_view = game_view;
